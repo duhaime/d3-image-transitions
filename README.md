@@ -2,7 +2,7 @@
 
 [D3.js](https://d3js.org/) does magic with svgs, and [Primitive](https://github.com/fogleman/primitive) transforms images into svgs. Put them together and you can turn Kevin Bacon into Francis Bacon:
 
-![Sample Image Transition]('./readme/image-transitions.gif')
+![Sample Image Transition](https://raw.githubusercontent.com/duhaime/d3-image-transitions/master/readme/image-transitions.gif)
 
 This repo contains a simple Python utility that transforms each image in a directory to an svg, and then transforms each of those svg's into json. It also contains a basic index.html and visualization script so others can create transitions between images like the one shown above.
 
