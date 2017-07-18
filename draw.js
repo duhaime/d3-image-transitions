@@ -35,10 +35,10 @@
           .attr('ry', 0.5)
           .attr('cx', function() {return Math.random() * width})
           .attr('cy', function() {return Math.random() * height})
-          .style('fill', '#fff')
-    });
+          .style('fill', '#fff');
 
-    transition();
+      transition();
+    });
   }
 
   var changeScene = function() {
