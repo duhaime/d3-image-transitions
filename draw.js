@@ -23,21 +23,23 @@
   svg.append('g')
       .attr('class', 'points-container');
 
-  // randomly initialize plot
-  d3.json(inputs[inputIndex], function(error, data) {
-    if (error) throw error;
-    console.log(data)
+  var initialize = function() {
+    d3.json(inputs[inputIndex], function(error, data) {
+      if (error) throw error;
 
-    svg.selectAll('.dot')
-        .data(data.points)
-      .enter().append('ellipse')
-        .attr('class', 'dot')
-        .attr('rx', 0.5)
-        .attr('ry', 0.5)
-        .attr('cx', function() {return Math.random() * width})
-        .attr('cy', function() {return Math.random() * height})
-        .style('fill', '#fff')
-  });
+      svg.selectAll('.dot')
+          .data(data.points)
+        .enter().append('ellipse')
+          .attr('class', 'dot')
+          .attr('rx', 0.5)
+          .attr('ry', 0.5)
+          .attr('cx', function() {return Math.random() * width})
+          .attr('cy', function() {return Math.random() * height})
+          .style('fill', '#fff')
+    });
+
+    transition();
+  }
 
   var changeScene = function() {
     inputIndex = (inputIndex + 1) % inputs.length;
@@ -79,5 +81,5 @@
   }
 
   document.querySelector('body').addEventListener('click', changeScene)
-  transition();
+  initialize();
 })()
